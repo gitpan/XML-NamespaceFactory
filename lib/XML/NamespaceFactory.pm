@@ -1,10 +1,11 @@
 
 package XML::NamespaceFactory;
-
 use strict;
-use vars qw($VERSION $AUTOLOAD);
-$VERSION = '1.00';
 
+# ABSTRACT: Simple factory objects for SAX namespaced names.
+our $VERSION = '1.01'; # VERSION
+
+use vars qw($VERSION $AUTOLOAD);
 use overload '""'  => \&toString,
 			 'cmp' => \&cmpString,
 			 '%{}' => \&toHash;
@@ -52,11 +53,19 @@ sub FETCH {
 
 1;
 
+__END__
+
 =pod
+
+=encoding UTF-8
 
 =head1 NAME
 
-XML::NamespaceFactory - Simple factory objects for SAX namespaced names
+XML::NamespaceFactory - Simple factory objects for SAX namespaced names.
+
+=head1 VERSION
+
+version 1.01
 
 =head1 SYNOPSIS
 
@@ -65,12 +74,6 @@ XML::NamespaceFactory - Simple factory objects for SAX namespaced names
   
   print $FOO->title;            # {http://foo.org/ns/}title
   print $FOO->{'bar.baz-toto'}; # {http://foo.org/ns/}bar.baz-toto
-
-=head1 ABSTRACT
-
-A number of accessors for namespaces in SAX use the JClark notation,
-{namespace}local-name. Those are a bit painful to type repeatedly, and
-somewhat error-prone as hash keys. This module makes life easier.
 
 =head1 DESCRIPTION
 
@@ -91,19 +94,31 @@ name. This form is more general but slower.
 
 If this is not clear, hopefully the SYNOPSIS should help :)
 
-=head1 MAINTAINER
+=head1 ABSTRACT
+
+A number of accessors for namespaces in SAX use the JClark notation,
+{namespace}local-name. Those are a bit painful to type repeatedly, and
+somewhat error-prone as hash keys. This module makes life easier.
+
+=head1 AUTHORS
+
+=over 4
+
+=item *
+
+Robin Berjon <robin@knowscape.com>
+
+=item *
 
 Chris Prather <chris@prather.org>
 
-=head1 AUTHOR
-
-Robin Berjon based on a suggestion by Ken MacLeod.
+=back
 
 =head1 COPYRIGHT AND LICENSE
 
-Copyright 2003-2010 by Robin Berjon
+This software is copyright (c) 2013 by Robin Berjon.
 
-This library is free software; you can redistribute it and/or modify
-it under the same terms as Perl itself. 
+This is free software; you can redistribute it and/or modify it under
+the same terms as the Perl 5 programming language system itself.
 
 =cut
