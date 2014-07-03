@@ -1,9 +1,10 @@
 
 package XML::NamespaceFactory;
 use strict;
+use Carp;
 
 # ABSTRACT: Simple factory objects for SAX namespaced names.
-our $VERSION = '1.01'; # VERSION
+our $VERSION = '1.02'; # VERSION
 
 use vars qw($VERSION $AUTOLOAD);
 use overload '""'  => \&toString,
@@ -13,7 +14,7 @@ use overload '""'  => \&toString,
 sub new {
 	my $class = ref($_[0]) ? ref(shift) : shift;
 	my $ns = shift;
-	die "Parameter \$ns required." unless defined $ns;
+	confess "Parameter \$ns required." unless defined $ns;
 	return bless \$ns;
 }
 
@@ -65,7 +66,7 @@ XML::NamespaceFactory - Simple factory objects for SAX namespaced names.
 
 =head1 VERSION
 
-version 1.01
+version 1.02
 
 =head1 SYNOPSIS
 

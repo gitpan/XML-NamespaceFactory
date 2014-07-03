@@ -1,3 +1,4 @@
+requires "Carp" => "0";
 requires "overload" => "0";
 requires "perl" => "5.006";
 requires "strict" => "0";
@@ -12,7 +13,7 @@ on 'configure' => sub {
 };
 
 on 'develop' => sub {
-  requires "Dist::Zilla" => "5.016";
+  requires "Dist::Zilla" => "5";
   requires "Dist::Zilla::Plugin::Authority" => "0";
   requires "Dist::Zilla::Plugin::AutoPrereqs" => "0";
   requires "Dist::Zilla::Plugin::CPANFile" => "0";

@@ -5,7 +5,7 @@
       "Chris Prather <chris@prather.org>"
    ],
    "dynamic_config" : 0,
-   "generated_by" : "Dist::Zilla version 5.016, CPAN::Meta::Converter version 2.140640",
+   "generated_by" : "Dist::Zilla version 5.019, CPAN::Meta::Converter version 2.141520",
    "license" : [
       "perl_5"
    ],
@@ -33,7 +33,7 @@
       },
       "develop" : {
          "requires" : {
-            "Dist::Zilla" : "5.016",
+            "Dist::Zilla" : "5",
             "Dist::Zilla::Plugin::Authority" : "0",
             "Dist::Zilla::Plugin::AutoPrereqs" : "0",
             "Dist::Zilla::Plugin::CPANFile" : "0",
@@ -76,6 +76,7 @@
       },
       "runtime" : {
          "requires" : {
+            "Carp" : "0",
             "overload" : "0",
             "perl" : "5.006",
             "strict" : "0",
@@ -91,11 +92,11 @@
    "provides" : {
       "XML::NamespaceFactory" : {
          "file" : "lib/XML/NamespaceFactory.pm",
-         "version" : "1.01"
+         "version" : "1.02"
       },
       "XML::NamespaceFactory::TiedHash" : {
          "file" : "lib/XML/NamespaceFactory.pm",
-         "version" : "1.01"
+         "version" : "1.02"
       }
    },
    "release_status" : "stable",
@@ -110,7 +111,10 @@
          "web" : "https://github.com/perigrin/xml-namespacefactory"
       }
    },
-   "version" : "1.01",
-   "x_authority" : "cpan:PERIGRIN"
+   "version" : "1.02",
+   "x_authority" : "cpan:PERIGRIN",
+   "x_contributors" : [
+      "Kjetil Kjernsmo <kjetil@kjernsmo.net>"
+   ]
 }
 
